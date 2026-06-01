@@ -86,6 +86,27 @@ export const routes: Routes = [
         (m) => m.ContactoComponent,
       ),
   },
+  {
+    path: 'privacidad',
+    loadComponent: () =>
+      import('./features/legal/privacidad/privacidad.component').then(
+        (m) => m.PrivacidadComponent,
+      ),
+  },
+  {
+    path: 'terminos',
+    loadComponent: () =>
+      import('./features/legal/terminos/terminos.component').then(
+        (m) => m.TerminosComponent,
+      ),
+  },
+  {
+    path: 'envios',
+    loadComponent: () =>
+      import('./features/legal/envios/envios.component').then(
+        (m) => m.EnviosComponent,
+      ),
+  },
 
   // ─── RUTAS DE ADMIN (requieren rol administrador) ────
   {
