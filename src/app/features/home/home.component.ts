@@ -1,73 +1,41 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { ProductosService } from '../../core/services/productos.service';
 import { CategoriasService } from '../../core/services/categorias.service';
 import { Producto } from '../../core/models/producto.model';
 import { Categoria } from '../../core/models/categoria.model';
-import { FormsModule } from '@angular/forms';
+
+// Interfaz extendida para mostrar imagen del primer producto
+interface ColeccionDestacada {
+  id: number;
+  nombre: string;
+  imagen: string;
+}
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+
   private productosService = inject(ProductosService);
   private categoriasService = inject(CategoriasService);
 
-  // Últimos 3 productos para "Nuevas llegadas"
   nuevasLlegadas: Producto[] = [];
+  colecciones: ColeccionDestacada[] = [];
 
-  // Categorías para "Colecciones destacadas"
-  categorias: Categoria[] = [];
-
-  // Email del newsletter
   newsletterEmail = '';
   newsletterEnviado = false;
-
   loading = true;
-
-  // Imágenes demo para colecciones
-  coleccionesDemo = [
-    {
-      nombre: 'Coleccion de Verano',
-      imagen:
-        'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&q=80',
-    },
-    {
-      nombre: 'Coleccion de Invierno',
-      imagen:
-        'https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=600&q=80',
-    },
-    {
-      nombre: 'Accesorios',
-      imagen:
-        'https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=600&q=80',
-    },
-  ];
-
-  // Imagen fallback por nombre de categoría
-  getImagenCategoria(nombre: string): string {
-    const lower = nombre.toLowerCase();
-    if (lower.includes('camiset') || lower.includes('hombre')) {
-      return 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&q=80';
-    }
-    if (lower.includes('pantalon') || lower.includes('mujer')) {
-      return 'https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=600&q=80';
-    }
-    if (lower.includes('accesorio') || lower.includes('calzado')) {
-      return 'https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=600&q=80';
-    }
-    // Imagen genérica de moda
-    return 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80';
-  }
 
   ngOnInit() {
     this.cargarNuevasLlegadas();
-    this.cargarCategorias();
+    this.cargarColecciones();
   }
 
   cargarNuevasLlegadas() {
@@ -76,31 +44,56 @@ export class HomeComponent implements OnInit {
         this.nuevasLlegadas = res.datos;
         this.loading = false;
       },
-      error: () => {
-        this.loading = false;
-      },
+      error: () => this.loading = false
     });
   }
 
-  cargarCategorias() {
+  cargarColecciones() {
+    // 1. Cargamos las categorías
     this.categoriasService.getAll().subscribe({
-      next: (cats) => {
-        // Máximo 3 categorías para las colecciones destacadas
-        this.categorias = cats.slice(0, 3);
-      },
+      next: (categorias) => {
+        const cats = categorias.slice(0, 3);
+
+        // 2. Por cada categoría buscamos su primer producto con imagen
+        cats.forEach(cat => {
+          // Si la categoría ya tiene imagen propia la usamos
+          if (cat.imagenCategoria) {
+            this.colecciones.push({
+              id: cat.id,
+              nombre: cat.nombre,
+              imagen: cat.imagenCategoria
+            });
+          } else {
+            // Si no, buscamos el primer producto de esa categoría con imagen
+            this.productosService.getAll({
+              categoriaId: cat.id,
+              limite: 10,
+              pagina: 1
+            }).subscribe({
+              next: (res) => {
+                // Buscamos el primer producto que tenga imagen
+                const productoConImagen = res.datos.find(p => p.imagenUrl);
+                this.colecciones.push({
+                  id: cat.id,
+                  nombre: cat.nombre,
+                  imagen: productoConImagen?.imagenUrl ||
+                    'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80'
+                });
+              }
+            });
+          }
+        });
+      }
     });
   }
 
   suscribirNewsletter() {
     if (this.newsletterEmail) {
-      // Por ahora solo simulamos el envío
-      // en el futuro se puede conectar a un servicio de email
       this.newsletterEnviado = true;
       this.newsletterEmail = '';
     }
   }
 
-  // Formatea el precio con € y 2 decimales
   formatPrecio(precio: number): string {
     return `${Number(precio).toFixed(2)}€`;
   }

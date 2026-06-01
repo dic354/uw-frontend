@@ -89,50 +89,30 @@
   <div class="container">
     <h2 class="section-title">Colecciones destacadas</h2>
 
-    <div class="row g-4">
-      <!-- Si no hay categorías mostramos placeholders visuales -->
-      <ng-container *ngIf="categorias.length === 0">
-        <div class="col-md-4" *ngFor="let col of coleccionesDemo">
-          <div class="coleccion-card" routerLink="/catalogo">
-            <div class="coleccion-img-wrapper">
-              <img
-                [src]="col.imagen"
-                [alt]="col.nombre"
-                class="coleccion-img"
-              />
-            </div>
-            <p class="coleccion-nombre">{{ col.nombre }}</p>
-          </div>
+    <!-- Loading skeleton -->
+    <div *ngIf="colecciones.length === 0" class="row g-4">
+      <div class="col-md-4" *ngFor="let i of [1, 2, 3]">
+        <div class="skeleton-card">
+          <div class="coleccion-img-placeholder skeleton-img"></div>
+          <div class="skeleton-line w-50 mt-3"></div>
         </div>
-      </ng-container>
+      </div>
+    </div>
 
-      <!-- Si hay categorías del backend -->
-      <ng-container *ngIf="categorias.length > 0">
-        <div class="col-md-4" *ngFor="let cat of categorias">
-          <div
-            class="coleccion-card"
-            [routerLink]="['/catalogo']"
-            [queryParams]="{ categoriaId: cat.id }"
-          >
-            <div class="coleccion-img-wrapper">
-              <img
-                *ngIf="cat.imagenCategoria"
-                [src]="cat.imagenCategoria"
-                [alt]="cat.nombre"
-                class="coleccion-img"
-              />
-              <!-- Fallback si la categoria no tiene imagen -->
-              <img
-                *ngIf="!cat.imagenCategoria"
-                [src]="getImagenCategoria(cat.nombre)"
-                [alt]="cat.nombre"
-                class="coleccion-img"
-              />
-            </div>
-            <p class="coleccion-nombre">{{ cat.nombre }}</p>
+    <!-- Colecciones reales -->
+    <div *ngIf="colecciones.length > 0" class="row g-4">
+      <div class="col-md-4" *ngFor="let col of colecciones">
+        <div
+          class="coleccion-card"
+          [routerLink]="['/catalogo']"
+          [queryParams]="{ categoriaId: col.id }"
+        >
+          <div class="coleccion-img-wrapper">
+            <img [src]="col.imagen" [alt]="col.nombre" class="coleccion-img" />
           </div>
+          <p class="coleccion-nombre">{{ col.nombre }}</p>
         </div>
-      </ng-container>
+      </div>
     </div>
   </div>
 </section>
