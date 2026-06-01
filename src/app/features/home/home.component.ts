@@ -12,10 +12,9 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-
   private productosService = inject(ProductosService);
   private categoriasService = inject(CategoriasService);
 
@@ -31,6 +30,41 @@ export class HomeComponent implements OnInit {
 
   loading = true;
 
+  // Imágenes demo para colecciones
+  coleccionesDemo = [
+    {
+      nombre: 'Coleccion de Verano',
+      imagen:
+        'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&q=80',
+    },
+    {
+      nombre: 'Coleccion de Invierno',
+      imagen:
+        'https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=600&q=80',
+    },
+    {
+      nombre: 'Accesorios',
+      imagen:
+        'https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=600&q=80',
+    },
+  ];
+
+  // Imagen fallback por nombre de categoría
+  getImagenCategoria(nombre: string): string {
+    const lower = nombre.toLowerCase();
+    if (lower.includes('camiset') || lower.includes('hombre')) {
+      return 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&q=80';
+    }
+    if (lower.includes('pantalon') || lower.includes('mujer')) {
+      return 'https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=600&q=80';
+    }
+    if (lower.includes('accesorio') || lower.includes('calzado')) {
+      return 'https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=600&q=80';
+    }
+    // Imagen genérica de moda
+    return 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80';
+  }
+
   ngOnInit() {
     this.cargarNuevasLlegadas();
     this.cargarCategorias();
@@ -44,7 +78,7 @@ export class HomeComponent implements OnInit {
       },
       error: () => {
         this.loading = false;
-      }
+      },
     });
   }
 
@@ -53,7 +87,7 @@ export class HomeComponent implements OnInit {
       next: (cats) => {
         // Máximo 3 categorías para las colecciones destacadas
         this.categorias = cats.slice(0, 3);
-      }
+      },
     });
   }
 
