@@ -4,22 +4,25 @@ import { adminGuard } from './core/guards/admin.guard';
 import { noAuthGuard } from './core/guards/no-auth.guard';
 
 export const routes: Routes = [
-
   // ─── RUTAS PÚBLICAS ──────────────────────────────────
   {
     path: '',
     loadComponent: () =>
-      import('./features/home/home.component').then(m => m.HomeComponent)
+      import('./features/home/home.component').then((m) => m.HomeComponent),
   },
   {
     path: 'catalogo',
     loadComponent: () =>
-      import('./features/catalogo/catalogo.component').then(m => m.CatalogoComponent)
+      import('./features/catalogo/catalogo.component').then(
+        (m) => m.CatalogoComponent,
+      ),
   },
   {
     path: 'producto/:id',
     loadComponent: () =>
-      import('./features/producto/producto.component').then(m => m.ProductoComponent)
+      import('./features/producto/producto.component').then(
+        (m) => m.ProductoComponent,
+      ),
   },
 
   // ─── RUTAS DE AUTH (solo sin sesión) ─────────────────
@@ -30,14 +33,25 @@ export const routes: Routes = [
       {
         path: 'login',
         loadComponent: () =>
-          import('./features/auth/login/login.component').then(m => m.LoginComponent)
+          import('./features/auth/login/login.component').then(
+            (m) => m.LoginComponent,
+          ),
       },
       {
         path: 'register',
         loadComponent: () =>
-          import('./features/auth/register/register.component').then(m => m.RegisterComponent)
-      }
-    ]
+          import('./features/auth/register/register.component').then(
+            (m) => m.RegisterComponent,
+          ),
+      },
+      {
+        path: 'forgot-password',
+        loadComponent: () =>
+          import('./features/auth/forgot-password/forgot-password.component').then(
+            (m) => m.ForgotPasswordComponent,
+          ),
+      },
+    ],
   },
 
   // ─── RUTAS PRIVADAS (requieren login) ────────────────
@@ -45,24 +59,32 @@ export const routes: Routes = [
     path: 'carrito',
     canActivate: [authGuard],
     loadComponent: () =>
-      import('./features/carrito/carrito.component').then(m => m.CarritoComponent)
+      import('./features/carrito/carrito.component').then(
+        (m) => m.CarritoComponent,
+      ),
   },
   {
     path: 'checkout',
     canActivate: [authGuard],
     loadComponent: () =>
-      import('./features/checkout/checkout.component').then(m => m.CheckoutComponent)
+      import('./features/checkout/checkout.component').then(
+        (m) => m.CheckoutComponent,
+      ),
   },
   {
     path: 'perfil',
     canActivate: [authGuard],
     loadComponent: () =>
-      import('./features/perfil/perfil.component').then(m => m.PerfilComponent)
+      import('./features/perfil/perfil.component').then(
+        (m) => m.PerfilComponent,
+      ),
   },
   {
-  path: 'contacto',
-  loadComponent: () =>
-    import('./features/contacto/contacto.component').then(m => m.ContactoComponent)
+    path: 'contacto',
+    loadComponent: () =>
+      import('./features/contacto/contacto.component').then(
+        (m) => m.ContactoComponent,
+      ),
   },
 
   // ─── RUTAS DE ADMIN (requieren rol administrador) ────
@@ -70,13 +92,15 @@ export const routes: Routes = [
     path: 'admin',
     canActivate: [adminGuard],
     loadComponent: () =>
-      import('./features/admin/admin.component').then(m => m.AdminComponent)
+      import('./features/admin/admin.component').then((m) => m.AdminComponent),
   },
 
   // ─── RUTA COMODÍN ────────────────────────────────────
   {
-  path: '**',
-  loadComponent: () =>
-    import('./features/not-found/not-found.component').then(m => m.NotFoundComponent)
-  }
+    path: '**',
+    loadComponent: () =>
+      import('./features/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent,
+      ),
+  },
 ];
