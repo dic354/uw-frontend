@@ -13,7 +13,6 @@ Frontend moderno de e-commerce de moda urbana desarrollado con **Angular 18**, *
 [![npm](https://img.shields.io/badge/npm-9%2B-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
 [![Cloudinary](https://img.shields.io/badge/Cloudinary-Image%20CDN-4B90E2?style=for-the-badge&logo=cloudinary&logoColor=white)](https://cloudinary.com)
-[![ngx-translate](https://img.shields.io/badge/ngx--translate-i18n-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://github.com/ngx-translate/core)
 
 ---
 
@@ -52,7 +51,6 @@ Frontend moderno de e-commerce de moda urbana desarrollado con **Angular 18**, *
 bootstrap              ^5.3.8  - Framework CSS responsive
 bootstrap-icons       ^1.13.1 - 1000+ iconos SVG
 rxjs                  ~7.8.0  - Observables y operadores
-@ngx-translate/core   ^17.0.0 - Internacionalización (i18n)
 ```
 
 ### **DevDependencies**
