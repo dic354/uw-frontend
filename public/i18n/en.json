@@ -1,0 +1,60 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "CATALOGUE": "Catalogue",
+    "CONTACT": "Contact",
+    "MENU": "Menu",
+    "ALL_PRODUCTS": "All products",
+    "LOADING": "Loading...",
+    "CART": "Cart",
+    "MY_PROFILE": "My profile",
+    "MY_ORDERS": "My orders",
+    "ADMIN_PANEL": "Admin Panel",
+    "LOGOUT": "Log out",
+    "LOGIN": "Log In"
+  },
+  "THEME": {
+    "LIGHT": "Switch to light mode",
+    "DARK": "Switch to dark mode"
+  },
+  "CATALOGUE": {
+    "TITLE": "Product Catalogue",
+    "SUBTITLE": "{{ total }} products found",
+    "ALL": "All",
+    "SIZE": "Size",
+    "MIN_PRICE": "Min. price",
+    "MAX_PRICE": "Max. price",
+    "SEARCH": "Search product...",
+    "OUT_OF_STOCK": "Out of stock",
+    "ADD_CART": "Add to cart",
+    "ADDING": "Adding...",
+    "ADDED": "Added!",
+    "ERROR": "Error",
+    "NO_RESULTS": "No products found",
+    "TRY_FILTERS": "Try different filters",
+    "SEE_ALL": "See all products"
+  },
+  "PRODUCT": {
+    "REVIEWS": "Product reviews",
+    "NO_REVIEWS": "No reviews yet for this product",
+    "WRITE_REVIEW": "Write a review",
+    "RATING": "Rating",
+    "COMMENT": "Comment",
+    "COMMENT_PLACEHOLDER": "Tell us about your experience with this product...",
+    "SEND_REVIEW": "Submit review",
+    "SENDING": "Sending...",
+    "LOGIN_REVIEW": "to leave a review",
+    "LOGIN_LINK": "Log in",
+    "AVAILABLE": "{{ stock }} units available",
+    "NO_STOCK": "Out of stock",
+    "QUANTITY": "Quantity:",
+    "ADD_CART": "Add to cart",
+    "ADDING": "Adding...",
+    "SEE_CART": "View cart",
+    "ADDED": "Product added to cart!",
+    "SELECT_SIZE": "Size",
+    "SIZE_SELECTED": "Selected size:",
+    "SIZE_ERROR": "Please select a size before continuing",
+    "COLOR": "Color:"
+  }
+}

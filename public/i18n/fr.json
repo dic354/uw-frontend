@@ -1,0 +1,60 @@
+{
+  "NAV": {
+    "HOME": "Accueil",
+    "CATALOGUE": "Catalogue",
+    "CONTACT": "Contact",
+    "MENU": "Menu",
+    "ALL_PRODUCTS": "Tous les produits",
+    "LOADING": "Chargement...",
+    "CART": "Panier",
+    "MY_PROFILE": "Mon profil",
+    "MY_ORDERS": "Mes commandes",
+    "ADMIN_PANEL": "Panneau Admin",
+    "LOGOUT": "Se déconnecter",
+    "LOGIN": "Se connecter"
+  },
+  "THEME": {
+    "LIGHT": "Passer en mode clair",
+    "DARK": "Passer en mode sombre"
+  },
+  "CATALOGUE": {
+    "TITLE": "Catalogue de produits",
+    "SUBTITLE": "{{ total }} produits trouvés",
+    "ALL": "Tous",
+    "SIZE": "Taille",
+    "MIN_PRICE": "Prix min.",
+    "MAX_PRICE": "Prix max.",
+    "SEARCH": "Rechercher un produit...",
+    "OUT_OF_STOCK": "Épuisé",
+    "ADD_CART": "Ajouter au panier",
+    "ADDING": "Ajout en cours...",
+    "ADDED": "Ajouté !",
+    "ERROR": "Erreur",
+    "NO_RESULTS": "Aucun produit trouvé",
+    "TRY_FILTERS": "Essayez d'autres filtres",
+    "SEE_ALL": "Voir tous les produits"
+  },
+  "PRODUCT": {
+    "REVIEWS": "Avis sur le produit",
+    "NO_REVIEWS": "Aucun avis pour ce produit",
+    "WRITE_REVIEW": "Écrire un avis",
+    "RATING": "Note",
+    "COMMENT": "Commentaire",
+    "COMMENT_PLACEHOLDER": "Partagez votre expérience avec ce produit...",
+    "SEND_REVIEW": "Envoyer l'avis",
+    "SENDING": "Envoi en cours...",
+    "LOGIN_REVIEW": "pour laisser un avis",
+    "LOGIN_LINK": "Connectez-vous",
+    "AVAILABLE": "{{ stock }} unités disponibles",
+    "NO_STOCK": "Rupture de stock",
+    "QUANTITY": "Quantité :",
+    "ADD_CART": "Ajouter au panier",
+    "ADDING": "Ajout en cours...",
+    "SEE_CART": "Voir le panier",
+    "ADDED": "Produit ajouté au panier !",
+    "SELECT_SIZE": "Taille",
+    "SIZE_SELECTED": "Taille sélectionnée :",
+    "SIZE_ERROR": "Veuillez sélectionner une taille avant de continuer",
+    "COLOR": "Couleur :"
+  }
+}
