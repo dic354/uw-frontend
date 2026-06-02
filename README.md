@@ -19,16 +19,18 @@ Frontend moderno de e-commerce de moda urbana desarrollado con **Angular 18**, *
 
 ## 📋 Tabla de Contenidos
 
-1. [Dependencias](#dependencias)
-2. [Estructura de Proyectos](#estructura-de-proyectos)
-3. [Autenticación y Autorización](#autenticación-y-autorización)
-4. [Servicios Core](#servicios-core)
-5. [Componentes Features](#componentes-features)
-6. [Componentes Compartidos](#componentes-compartidos)
-7. [Interceptores y Guards](#interceptores-y-guards)
-8. [Modelos de Datos](#modelos-de-datos)
-9. [Rutas y Navegación](#rutas-y-navegación)
-10. [Flujos de Usuario](#flujos-de-usuario)
+1. [Dependencias](#-dependencias)
+2. [Estructura de Proyectos](#-estructura-de-proyectos)
+3. [Autenticación y Autorización](#-autenticación-y-autorización)
+4. [Servicios Core](#-servicios-core)
+5. [Componentes Features](#-componentes-features)
+6. [Componentes Compartidos](#-componentes-compartidos)
+7. [Interceptores y Guards](#-interceptores-y-guards)
+8. [Modelos de Datos](#-modelos-de-datos)
+9. [Rutas y Navegación](#-rutas-y-navegación)
+10. [Flujos de Usuario](#-flujos-de-usuario)
+11. [Seguridad](#-seguridad)
+12. [Recursos](#-recursos)
 
 ---
 
