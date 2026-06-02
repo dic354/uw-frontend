@@ -1,6 +1,6 @@
 # UrbanWear - Frontend Angular
 
-Frontend moderno de e-commerce de moda urbana desarrollado con **Angular 18**, **TypeScript** y **Bootstrap**. Interfaz completa con autenticación JWT, carrito de compras, checkout, perfil de usuario y panel de administración.
+Frontend moderno de e-commerce de moda urbana desarrollado con **Angular 18**, **TypeScript** y **Bootstrap**. Interfaz completa y responsiva con autenticación JWT, búsqueda y filtrado avanzado de productos, carrito de compras con sincronización en tiempo real, checkout seguro, gestión completa del perfil de usuario, sistema de reseñas y calificaciones, panel administrativo con CRUD de productos/categorías/descuentos, formulario de contacto.
 
 ---
 
