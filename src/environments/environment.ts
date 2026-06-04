@@ -1,8 +1,8 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000',
+  apiUrl: 'https://urbanwear-backend-q1yy.onrender.com',
   cloudinary: {
-    cloudName: 'dv7aunoql',       
-    uploadPreset: 'urbanwear_preset'   
+    cloudName: 'dv7aunoql',
+    uploadPreset: 'urbanwear_preset'
   }
 };
