@@ -10,8 +10,7 @@ import { Categoria, CreateCategoriaDto } from '../models/categoria.model';
 export class CategoriasService {
 
     private http = inject(HttpClient);
-    private readonly API = `${environment.apiUrl}/categorias`;
-
+    private readonly API = 'https://urbanwear-backend-q1yy.onrender.com/auth'
     getAll(): Observable<Categoria[]> {
         return this.http.get<Categoria[]>(this.API);
     }

@@ -15,7 +15,7 @@ import {
 export class ProductosService {
 
   private http = inject(HttpClient);
-  private readonly API = `${environment.apiUrl}/productos`;
+  private readonly API = 'https://urbanwear-backend-q1yy.onrender.com/auth'
 
   // Construye los query params dinámicamente
   // solo añade al URL los filtros que vengan informados

@@ -18,7 +18,7 @@ export class AuthService {
   private http = inject(HttpClient);
   private router = inject(Router);
 
-  private readonly API = `${environment.apiUrl}/auth`;
+  private readonly API = 'https://urbanwear-backend-q1yy.onrender.com/auth'
   private readonly TOKEN_KEY = 'urbanwear_token';
   private readonly USER_KEY = 'urbanwear_user';
 

@@ -10,7 +10,7 @@ import { Pedido, CreatePedidoDto, UpdateEstadoDto } from '../models/pedido.model
 export class PedidosService {
 
   private http = inject(HttpClient);
-  private readonly API = `${environment.apiUrl}/pedidos`;
+  private readonly API = 'https://urbanwear-backend-q1yy.onrender.com/auth'
 
   create(dto: CreatePedidoDto): Observable<Pedido> {
     return this.http.post<Pedido>(this.API, dto);

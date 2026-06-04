@@ -14,7 +14,7 @@ import {
 export class ResenasService {
 
   private http = inject(HttpClient);
-  private readonly API = `${environment.apiUrl}/resenas`;
+  private readonly API = 'https://urbanwear-backend-q1yy.onrender.com/auth'
 
   getByProducto(productoId: number): Observable<ResenasResponse> {
     return this.http.get<ResenasResponse>(`${this.API}/producto/${productoId}`);

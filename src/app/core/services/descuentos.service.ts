@@ -15,7 +15,7 @@ import {
 export class DescuentosService {
 
   private http = inject(HttpClient);
-  private readonly API = `${environment.apiUrl}/descuentos`;
+  private readonly API = 'https://urbanwear-backend-q1yy.onrender.com/auth'
 
   // Público — cualquier usuario logado puede validar un código
   validar(dto: ValidarDescuentoDto): Observable<ValidacionDescuento> {

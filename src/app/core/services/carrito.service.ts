@@ -14,8 +14,7 @@ import {
 export class CarritoService {
 
   private http = inject(HttpClient);
-  private readonly API = `${environment.apiUrl}/carrito`;
-
+  private readonly API = 'https://urbanwear-backend-q1yy.onrender.com/auth'
   // BehaviorSubject para que el navbar muestre
   // el número de items del carrito en tiempo real
   private totalItems = new BehaviorSubject<number>(0);
