@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   apiUrl: 'https://urbanwear-backend-q1yy.onrender.com',
   cloudinary: {
     cloudName: 'dv7aunoql',
