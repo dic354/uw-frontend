@@ -14,7 +14,7 @@ import {
 export class ProductoImagenService {
 
   private http = inject(HttpClient);
-  private readonly API = 'https://urbanwear-backend-q1yy.onrender.com/auth'
+  private readonly API = `${environment.apiUrl}/producto-imagen`;
 
   getByProducto(productoId: number): Observable<ProductoImagen[]> {
     return this.http.get<ProductoImagen[]>(`${this.API}/producto/${productoId}`);

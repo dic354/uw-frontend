@@ -14,7 +14,7 @@ import {
 export class UsuariosService {
 
   private http = inject(HttpClient);
-  private readonly API = 'https://urbanwear-backend-q1yy.onrender.com/auth'
+  private readonly API = `${environment.apiUrl}/usuarios`;
 
   getMe(): Observable<Usuario> {
     return this.http.get<Usuario>(`${this.API}/me`);
