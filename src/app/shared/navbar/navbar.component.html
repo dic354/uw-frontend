@@ -129,11 +129,10 @@
                                 Todos los productos
                             </button>
                         </li>
-                        <!-- Categorías dinámicas -->
+                        <!-- Categorías dinámicas CORREGIDAS -->
                         <li *ngFor="let cat of categorias">
-                            <button class="drawer-sublink drawer-link--arrow" (click)="navigateTo('/catalogo', { categoriaId: cat.id })">
+                            <button class="drawer-sublink" (click)="navigateTo('/catalogo', { categoriaId: cat.id })">
                                 {{ cat.nombre }}
-                                <i class="bi bi-chevron-right"></i>
                             </button>
                         </li>
                     </ul>
