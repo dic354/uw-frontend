@@ -2,6 +2,11 @@
 
 Frontend moderno de e-commerce de moda urbana desarrollado con **Angular 18**, **TypeScript** y **Bootstrap**. Interfaz completa y responsiva con autenticación JWT, búsqueda y filtrado avanzado de productos, carrito de compras con sincronización en tiempo real, checkout seguro, gestión completa del perfil de usuario, sistema de reseñas y calificaciones, panel administrativo con CRUD de productos/categorías/descuentos, formulario de contacto.
 
+## 🔗 Enlaces del Proyecto
+
+* **Repositorio del Frontend:** [GitHub - UW-backend](https://github.com/dic354/uw-frontend)
+* **Despliegue de la Aplicación:** [UrbanWear en Vercel](https://uw-frontend.vercel.app/)
+
 ---
 
 ## Stack Tecnológico
