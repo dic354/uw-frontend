@@ -5,7 +5,7 @@ Frontend moderno de e-commerce de moda urbana desarrollado con **Angular 18**, *
 ## 🔗 Enlaces del Proyecto
 
 * **Repositorio del Frontend:** [GitHub - UW-backend](https://github.com/dic354/uw-frontend)
-* **Despliegue de la Aplicación:** [UrbanWear en Vercel](https://uw-frontend.vercel.app/)
+* **Despliegue de la Aplicación:** [UrbanWear](https://uw-frontend.vercel.app/)
 
 ---
 
